@@ -1,0 +1,551 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[left=20mm, right=20mm, top=10mm, bottom=20mm]{geometry}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\begin{section}{What is Linear Algebra}
+	\begin{subsection}*{Topics}
+\begin{enumerate}
+		\item{What Linear Algebra is}
+		\item{Elementary Row Operations (ERO's)}
+		\item{Echelon form}
+\end{enumerate}
+	\end{subsection}
+	\begin{subsection}{What is Linear Algebra?}
+	\textbf{The Basic Definition:} Linear Algebra
+	is the study of solving linear equations.\\
+	These generally come in the form of
+	$a_1*x_1+a_2*x_2+...+a_n*x_n=b$\\
+	We are looking for intersections. This can be 
+	done through substitution, general algebraic methods
+	(ERO's) and matrix rotation. \\
+\end{subsection}
+\begin{subsection}{Elementary Row Operations (Three Main Types)}
+\begin{enumerate}
+	\item{\textbf{Replacement}: Replace one row by the 
+		sum of itself & a scalar multiple of another.}
+	\item{\textbf{Interchange}: Switch two rows.}
+	\item{\textbf{Scaling}: Multiply all entries in a row by
+		a non-zero constant}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Echelon Forms}
+	\textbf{Echelon Form}: All non-zero rows are above rows
+	of all zeroes.
+	\begin{itemize}
+	\item{All leading entries of a row is in a column to 
+		the right of the row above it}
+	\item{All entries are in a column below a leading entry
+		are zeroes}
+	\end{itemize}
+	\\ \textbf{Reduced Echelon Form}: A unique solution!
+	\begin{itemize}
+\item{The leading entry in each non-zero row is a 1}
+\item{Each leading 1 is the only non-zero entry in the column}
+	\end{itemize}
+\end{subsection}
+
+\begin{subsection}{Miscellaneous Notes from Day 1}
+	\begin{itemize}
+		\item{\textbf{An Intersection of Lines}:
+			unique solution}
+		\item{\textbf{Equivalent Lines}:
+			infinite solutions}
+		\item{\textbf{Parallel lines}: no solution}
+		\item{\textbf{Consistent}: $\geq 1$ solutions}
+		\item{\textbf{Inconsistent}: 0 Solutions}
+	\end{itemize}
+\end{subsection}
+
+\end{section}	
+
+\begin{section}{Vector and Matrix Equations}
+
+\begin{subsection}*{Theorems}
+\textbf{Theorem 3}: If A is an m*n matrix with columns
+$\textbf{a}_1, \textbf{a}_2,\dots,\textbf{a}_n$ & if 
+$b \in \mathbb{R}^n$, then matrix equation $A\textbf{x}=\textbf{b}$
+has the same solution as the vector equation
+$x_1\textbf{a}_1+x_2\textbf{a}_2+\dots+x_n\textbf{a}_n=\textbf{b}$
+and the system with the augmented matrix 
+$\begin{bmatrix} 
+\textbf{a}_1 & \textbf{a}_2 & \textbf{a}_n & \textbf{b} \end{bmatrix}$ 
+\\ \\
+\textbf{Theorem 4}: For an m*n matrix A the following statements
+are logically equivalent
+\begin{enumerate}
+	\item{For all $\textbf{b}\in\mathbb{R}^m$ 
+	there exists a solution for $A\textbf{x}=\textbf{b}$}
+	\item{Each $\textbf{b}\in\mathbb{R}^m$ is a linear combination
+		of A columns}
+	\item{The columns of A span $\mathbb{R}^m$}
+	\item{A has a pivot in each row}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{enumerate}
+	\item{Defining vectors and the span of a collection of vectors}
+	\item{Writing linear equations as a matrix * vector}
+	\item{Recognizing $M*\textbf{v}$ as a linear combination
+		of columns of a matrix}
+	\item{Algebraic Properties of Vectors}
+\end{enumerate}
+\end{subsection}
+
+\begin{subsection}{Span and vectors}
+	\textbf{Vectors}: A matrix with one column and m dimensions
+	where m is #of rows.
+\begin{itemize}
+	\item{$\textbf{u}=\langle1,2\rangle$ 
+	defines $\mathbb{R}^2$}
+	\item{$\textbf{v}=\langle1,2,-5\rangle$ defines $\mathbb{R}^3$
+\end{itemize}
+\\ \textbf{Linear Combinations of Vectors}: a set where 
+$\textbf{y}=c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+c_n\textbf{v}_n$
+where $(c_1,c_2,\dots,c_p)$ are scalars (weights)\\
+
+\\ \noindent\textbf{Span}: The set of all linear combinations Span
+    	$\lbrace \textbf{v}_1 , \dots , \textbf{v}_p \rbrace$ where 
+	$\textbf{b}=c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+
+	c_p\textbf{v}_p \in \mathbb{R}$
+\begin{itemize}
+	\item{e.g span of $\textbf{v} \in \mathbb{R}^2$ is a line}
+	\item{e.g span of $\textbf{v}+\textbf{u} 
+	\in \mathbb{R}^3$ is a plane}
+\end{itemize}
+By the definition of 
+$A\textbf{x}=x_1\textbf{a}_1+\dots+\x_n\textbf{a}_n$ through Theorem 3,
+$A\textbf{x}=\textbf{b}$ has a solution iff \textbf{b} is the span of A
+columns.
+\end{subsection}
+\begin{subsection}{Algebraic Properties of Vectors}
+	For all \textbf{u},\textbf{v},\textbf{w} $\in \mathbb{R}^n$
+	where $c_1 , c_2$ are scalars, these are true:
+\begin{enumerate}
+	\item{$\textbf{v}+\textbf{u}=\textbf{u}+\textbf{v}
+	\Rightarrow (\textbf{u}+\textbf{v})+\textbf{w}=
+	\textbf{u}+(\textbf{v}+\textbf{w})$
+\item{$\textbf{u}+\textbf{0}=\textbf{u}$}
+\item{$c(\textbf{u}+\textbf{v})=c\textbf{u}+c\textbf{v}$}
+\item{$(c+d)\textbf{u}=c\textbf{u}+d\textbf{u}$}
+\item{There is no $\textbf{u}*\textbf{v}$}
+\end{enumerate}
+\end{subsection}
+\end{section}
+
+\newpage
+\begin{section}{Homogenous Systems and Linear Independence}
+
+\begin{subsection}*{Theorems}
+\textbf{Theorem 6}: Suppose the equation $A\textbf{x}=\textbf{b}$ is
+consistent for some \textbf{b}, then the solution set of all the 
+vectors of the form is $\textbf{w}=\textbf{p}+\textbf{v}_n$, where
+$\textbf{v}_n$ is any solution of the homegenous 
+system $A\textbf{x}=\textbf{0}$
+\\
+\\ \textbf{Theorem 7}: A set of 2+ vectors $S:\lbrace\textbf{v}_1,\dots
+,\textbf{v}_n\rbrace$ is linearly dependent (LD) iff $\geq 1$ vector 
+in S is a linear combination of the others.\\
+\\
+\textbf{Theorem 8}:if a set $\in\mathbb{R}^n$ contains more vectors 
+than dimensions, then the set is LD.\\
+(This is because there will be a free variable and thus not a single
+unique solution)
+\\
+\\ \textbf{Theorem 9}: If a set $S:\lbrace\textbf{v}_1,/dots
+,\textbf{v}_n\rbrace \in\mathbb{R}^n$ contains a \textbf{0} vector, the
+set is LD
+\end{subsection}
+\begin{subsection}*{Topics}
+	\begin{enumerate}
+	\item{Homogenous Systems}
+	\item{Parametric Form}
+	\item{Linear Independence and Dependence}
+	\end{enumerate}
+\end{subsection}
+\begin{subsection}{Homogenous Systems}
+When $A\textbf{x}=\textbf{0}$, the trivial solution is
+$\textbf{x}=\textbf{0}$. The non-trivial form of this is when
+\textbf{x} is equal to something other then \textbf{0}.\\
+The solution set to a homogenous system is the span of some set of 
+vectors $S:\lbrace\textbf{v}_1,\textbf{v}_n\rbrace$
+\begin{itemize}
+\item{The system $A\textbf{x}=\textbf{0}$
+	will have a non-trivial solution if there is a free
+	variable within the coefficient matrix}
+\end{itemize}
+
+\end{subsection}
+
+\begin{subsection}{Parametric Form}
+\begin{enumerate}
+	\item{Row reduce augmented matrix to reudced echelon form}
+	\item{Express base cariables in terms of free variables in 
+		equation system}
+	\item{Write solution vector \textbf{x}whose entries
+		depend on free variables}
+	\item{decompose \textbf{x} into linear combination w/ free 
+		variable as the parameter for one of the vectors}
+\end{enumerate}
+\begin{equation*}{Example:}
+\begin{bmatrix} 
+	1 & 0 & 2 & 2 \\
+	0 & 1 & 3 & 4 \\
+	0 & 0 & 0 & 0
+\end{bmatrix} 
+\Rightarrow
+x_3\begin{bmatrix} -2 \\ -3 \\ 1 \end{bmatrix} +
+\begin{bmatrix} 2 \\ 4 \\ 0 \end{bmatrix} 
+\end{equation*}
+\end{subsection}
+
+\begin{subsection}{Linear Independence and Dependence}
+\textbf{LI}:
+A set of vectors $\in \mathbb{R}^n$ is Linearly Independent
+(LI) if the vector equation
+$x_1\textbf{v}_1+\dots+x_n\textbf{v}_n=\textbf{0}$ can only
+be solved with the trivial solution $\textbf{x}=\textbf{0}$
+\\
+
+\noindent \textbf{LD}:
+A set of vectors $\in \mathbb{R}^n$ is Linearly Dependent(LD) if 
+there exist weights $(c_1,c_2,\dots,c_n)$, not all zero where
+$\lbrace c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+c_n\textbf{v}_n\rbrace=0$
+\begin{itemize}
+\item{$m>n=#col>#row=#vectors>#dimenstions$}
+\item{If a vector is a scalar multiple of another in the set, LD}
+\end{itemize}
+\end{subsection}
+\end{section}
+
+\begin{section}{Linear Transformations and the Standard Matrix}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 5}: If a matrix is m*n, then the transform 
+$\textbf{x} \Rightarrow A\textbf{x}$ has these properties:
+\begin{enumerate}
+\item{$A(\textbf{u}+\textbf{v})=A\textbf{u}+A\textbf{v}$
+Vector addition is preserved}
+\item{$A(c\textbf{u})=cA\textbf{u}$} Scalar multiplication
+	is preserved.
+\end{enumerate}
+\\
+\textbf{Theorem 10}: If T is a linear transformation
+$\mathbb{R}^n \Rightarrow \mathbb{R}^m$ then there exists a matrix
+A with dimensions m*n such that $T(\textbf{x})=A\textbf{x}$ for
+all $\textbf{x}\in\mathbb{R}$ 
+\\
+$A= \begin{bmatrix} T(\textbf{e}_1) & \dots & T(\textbf{e}_n) 
+\end{bmatrix}$ whose jth column is $T(\textbf{E}_j)$ where 
+$\textbf{e}_j$ is the jth column of the identity matrix in 
+$\mathbb{R}^n$
+\\
+\\ \textbf{Theorem 11}: Let T:$\mathbb{R}^n\Rightarrow\mathbb{R}^m$
+be a linear transformation. Then T is one-to-one iff the equation $T(\textbf{x})=0$ has only
+a trivial solution (LI)
+\\
+\\ \textbf{Theorem 12}:
+Let T:$\mathbb{R}^n\Rightarrow\mathbb{R}^m$
+be a linear transformation. A is the standard matrix of T
+\begin{itemize}
+\item{T maps $\mathbb{R}^n\Rightarrow\mathbb{R}^m$ iff columns of
+	A span $\mathbb{R}^m$}
+\item{T is one-to-one iff columns's of A are LI}
+\end{itemize}
+\end{subsection}
+	
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{Linear Transformations}
+\item{Transformation Groups}
+\item{One-to-one and Onto}
+\end{enumerate}
+\end{subsection}
+
+\begin{subsection}{Linear Transformations}
+Linear transformation allows for the mapping from one set
+of vectors in a real space, to another set, in another
+real space.\\
+\textbf{Matrix Mapping}: The process of going from one set in one
+space to another set in another space. A T transform is a function
+of matrix mapping.\\
+From this, a T from $\mathbb{R}^n \Rightarrow \mathbb{R}^m$ is a 
+rule that assigns a vector $\textbf{x}\in\mathbb{R}^n$ to a vector
+in $\mathbb{R}^m$.\\
+\\ \textbf{Transforms $T:\mathbb{R}^n \Rightarrow \mathbb{R}^m$}
+\begin{enumerate}
+\item{Set $\mathbb{R}^n$ is in the \textbf{domain} of T}
+\item{Set $\mathbb{R}^m$ is in the \textbf{codomain} of T}
+\item{For an $\textbf{x}\in\mathbb{R}^n$, the vector 
+$T\textbf{x}\in\mathbb{R}^m$ is called the \textbf{image} of 
+\textbf{x} under the action T}
+\item{The set of all images is called the \textbf{range} of T}
+\end{enumerate}
+T(\textbf{x}) formula: Linear Transformation
+$\mathbb{R}^n \Rightarrow \mathbb{R}^m$ is actually a matrix
+transformation $A\textbf{x}\Rightarrow\textbf{x}$. The key is to 
+look at what T does to the columns of the identity matrix.
+\end{subsection}
+
+\begin{subsection}{Identity Matrices and Transformation Groups}
+\textbf{Identity Matrix}: 
+$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} 
+\begin{bmatrix} \textbf{x}_1 \\ \textbf{x}_2 \end{bmatrix} 
+= \begin{bmatrix} \textbf{x}_1 \\ \textbf{x}_2 \end{bmatrix} $
+\\
+\\ \textbf{Group 1}: Contraction and Expansion 
+$\begin{bmatrix} K & 0 \\ 0 & 1 \end{bmatrix} & 
+\begin{bmatrix} 1 & 0 \\ 0 & K \end{bmatrix}$
+\\
+\textbf{Group 2}: Reflection 
+$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$
+\\
+\textbf{Group 3}: Shearing
+$\begin{bmatrix} 1 & K \\ 0 & 1 \end{bmatrix}
+\begin{bmatrix} 1 & 0 \\ K & 1\end{bmatrix}  $
+\\
+\textbf{Group 4}: Rotations
+$\begin{bmatrix} cos\Theta & -sin\Theta \\
+sin\Theta & cos\Theta \end{bmatrix} $
+\\
+\textbf{Group 5}: Axis Projection
+$\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} 
+\begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} $
+\end{subsection}
+
+\begin{subsection}{One-to-One and Onto}
+\Large{\textbf{Onto}}: A mapping T: 
+$\mathbb{R}^n\Rightarrow\mathbb{R}^m$ is \textbf{onto} if each
+$\textbf{b}\in\mathbb{R}^m$ is the image of at least one
+$\textbf{x}\in\mathbb{R}^m$ \\
+\\ \noindent\Large{\textbf{One-to-one}}: A mapping 
+T: $\mathbb{R}^n\Rightarrow\mathbb{R}^m$ is \textbf{one-to-one}
+if each $\textbf{b}\in\mathbb{R}^m$ is the image of at most one
+$\textbf{x}\in\mathbb{R}^m$
+\end{subsection}
+\end{section}
+
+\newpage
+\begin{section}{Matrix Multiplication and Invertability}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 1}:
+\begin{itemize}
+\item{$(A^T)^T=A$}
+\item{$(A+B)^T=A^T+B^T$}
+\item{$(rA)^T=rA^T$}
+\item{$(AB)^T=A^TB^T$}
+\end{itemize}
+\\
+\textbf{Theorem 5}: If A is an n*n matrix & is invertible, then for every $\textbf{b}\in\mathbb{R}^n$ the equation
+$A\textbf{x}=\textbf{b}$ has a unique solution: 
+$A^{-1}\textbf{b}=\textbf{x}$
+\\
+\noindent\textbf{Theorem 6}: If A is invertible, assume:
+\begin{itemize}
+\item{$(A^{-1}^{-1}=A$}
+\item{$(AB)^{-1}=A^{-1}B^{-1}$}
+\item{$(A^{T})^{-1}=(A^{-1})^{T}$}
+\end{itemize}
+\\
+\noindent\textbf{Theorem 7}: An n*n matrix $A\in\mathbb{R}^{n}$ is 
+invertible iff A is row equivalent to $I_{n}$ \\
+Any sequence of ERO's that transform $ A\Rightarrow I_{n}$ also 
+transforms $I_{n} \Rightarrow A^{-1}$
+
+\\
+\end{subsection} 
+
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{Matrix Properties and Definition}
+\item{Row Column Computation}
+\item{Invertibility}
+\end{enumerate} \end{subsection}
+
+\begin{subsection}{Matrix Properties and Definitions}
+A,B,C are Matrices where m=n and r&s are scalars
+\begin{enumerate}
+\item{$A+B=B+A$}
+\item{$A+0=A$}
+\item{$r(A+B)=rA+rB$}
+\item{$rs(A)=rA+sA$}
+\end{enumerate}
+\\
+A diagonal Matrix is a matrix where all non-diagonal entries are 0\\
+A zero matrix is a matrix where all entries are 0\\
+A+B adds each corresponding entry $(a+b)_{ij}=a_{ij}+b_{ij}$\\
+Scalar multiplication is preserved \\
+Matrix multiplication isn't commutative\\
+\begin{itemize}
+\item{$AB=AC\neq B=C$}
+\item{$(AB)C=A(BC)$}
+\item{$AB=0$ doesn't mean $A=0 or B=0$}
+\item{$AB\neq BA$}
+\end{itemize}
+A is m*n, B & C have operable dimensions
+\begin{itemize}
+\item{$A(BC)=(AB)C$}
+\item{$A(B+C)=AB+AC$ Left Distributive}
+\item{$(B+C)A=BA+CA$ Right Distributive}
+\item{$r(AB)=rA(B)=A)rB)$ Scalars}
+\item{$I_{m}A=A=AI_{n}$}
+\end{itemize}
+\end{subsection}
+
+\begin{subsection}{Row Column Computation}
+$B\textbf{x}$ transforms $\textbf{x} \Rightarrow B\textbf{x}$\\
+Matrix A turn $B\textbf{x}\Rightarrow A(B\textbf{x})$\\
+For this to work, A must be m*n and B must be n*p. The outcome matrix
+is n*p. Acol must equal Brow.
+\\
+\textbf{Row column rule for computing AB}: If AB is defined Acol=Brow
+then the entry at row i and column j of AB is
+\begin{equation}
+	(AB)_{ij}=a_{i_1}b_{1j}+a_{i_2}b_{21}+\dots+a_{in}b_{nj}
+\end{equation}
+\end{subsection}
+
+\begin{subsection}{Invertibility}
+\begin{equation}
+	A^{-1}A=AA^{-1}=I
+\end{equation}
+If $A^{-1}$ exists for A, A is invertible.\\
+Non-invertible $\Leftrightarrow$ singular\\
+$A^{-1}$ is unique\\
+\textbf{The Elementary Matrix}: Obtained bt performing a single ERO on an
+identity matrix.\\
+An ERO becomes an EA by performing operations on I.\\
+The inverse of E is the elementary matrix of the same type that transforms
+E back into I.\\ 
+Apply ERO's both to A and I at the same time in one augmented matrix gives
+$A^{-1}$ once A is in RREF.
+\end{subsection}
+
+\end{section}
+
+\newpage
+\begin{section}{Determinants and the Invertible Matrix Theorem}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 2.8}: The Invertible Matrix Theorem (IMT) -- Let A be a
+square n*n matrix.
+\begin{enumerate}
+\item{If any statements below aretrue, all are true. 
+If any statements below are false all are false}
+\begin{enumerate}
+\item{A is an invertible matrix}
+\item{A is row equivalent to the n*n identity matrix}
+\item{A has n pivot positions}
+\item{the equation $A\textbf{x}=\textbf{0}$ has only the trivial solution}
+\item{The columns of A form a linearly independent set}
+\item{The linear transformation $\textbf{x}\Rightarrow A\textbf{x}$ 
+	is One-to-One}
+\item{The equation $A\textbf{x}=\textbf{b}$ has at least one
+	solution for each $\textbf{b}\in\mathbb{R}^n$}
+\item{The columns of A span $\mathbb{R}^n$}
+\item{The linear transformation $\textbf{x}\Rightarrow A\textbf{x}$
+	maps $\mathbb{R}^n$ onto $\mathbb{R}^n$}
+\item{There is an n*n matrix C such that CA=I}
+\item{There is an n*n matrix D such that AD=I}
+\item{$A^T$ is an invertible matrix}
+\end{enumerate} \end{enumerate}
+\textbf{Theorem 2.9}: Let T:$\mathbb{R}^n\Rightarrow\mathbb{R}^n$
+be a linear transformation and let A be the standard matrix of T,
+then T is invertible iff A is an invertible matrix.
+\\
+\\\textbf{Theorem 2.5}: let 
+$A=\begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} 
+\end{bmatrix}$, if $ad-bd=0$ then A is invertible and 
+\\$A^{-1}=\frac{1}{a_{11}a_{22}-a_{12}a_{21}}*
+\begin{bmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11} \end{bmatrix}$\\
+If $a_{11}a_{22}-a_{12}a_{21}=0$ then A is not invertible
+detA$=a_{11}a_{22}-a_{12}a_{21}$
+\\
+\\ \textbf{Theorem 3.1}: The determinant of an n*n matrix A can be
+computed by a cofactor expansion across any row or down any column.
+\\ The cofactor expansion across the ith row:\\
+$detA=a_{i1}c_{i1}+a_{i2}C_{12}+\dots+a_{in}C_{in}$\\
+The Cofactor expansion down the jth column:\\
+$detA=a_{1j}C_{1j}+a_{2j}C_{2j}+\dots+a_{nj}C_{nj}$
+\\
+\textbf{Theorem 3.2}: If A is a triangular matrix, then detA is the 
+product of the entries on the main diagonal
+\end{subsection}
+\begin{subsection}{Topics}
+\begin{enumerate}
+\item{Invertability, Span, LI, Pivots, in the context of the
+	Invertible Matrix Theorem (IMT)}
+\item{Determinants of 3x3 matrices and NxN matrices}
+\end{enumerate}
+\end{subsection}
+
+\begin{subsection}{Determinants}
+\begin{equation}
+	a_{11}\neq0\\
+\begin{bmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}
+\\ a_{31} & a_{32} & a_{33} \end{bmatrix} \Rightarrow
+\begin{bmatrix} a_{11} & a_{12} & a_{13} \\
+0 & a_{11}a_{22}-a_{12}a_{21} & a_{11}a_{23}-a_{13}a_{21} \\
+0 & 0 & a_{11}\Delta \end{bmatrix} \\ \\
+\end{equation}
+\begin{equation}
+\Delta=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{12}a_{21}a_{32}-
+a_{11}a_{23}a_{31}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}
+\end{equation}
+\begin{equation}
+A invertible \Leftarrow\Rightarrow \Delta\neq0 \Rightarrow detA=\Delta
+\end{equation}
+\begin{equation}
+\Delta = a_{11}det\begin{bmatrix} a_{22} & a_{23}
+\\ a_{32} & a_{33} \end{bmatrix} 
+-a_{12}det\begin{bmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} 
+\end{bmatrix} 
++a_{13}det\begin{bmatrix} a_{21} & a_{22} \\
+a_{31} & a_{32} \end{bmatrix} 
+\end{equation}
+
+\noindent\textbf{Determinant Definition}: For n=2, the determinant of an n*n
+matrix A is \\ 
+\begin{equation}
+detA=a_{11}detA_{11}-A_{12}detA_{12}+\dots+(-1)^{1+n} a_{1n}detA_{1n}=
+\sum_{j=1}^{n}(-1)^{1+j}a_{ij}detA_{ij}
+\end{equation}
+\\ \\
+\noindent\textbf{Cofactor}: Define th(ij) - cofactor of A as the number 
+$C_{ij}$
+\begin{equation}
+	C_{ij}=(-1)^{i+j}detA_{ij} \Rightarrow
+	detA= a_{11}c_{11}+a_{12}c_{12}+\dots+a_{1n}c_{1n}
+\end{equation}
+The cofactor expansion across the 1st row of A
+\begin{equation}
+	detA=a_{11}C_{11}+a_{12}C_{12}+\dots+a_{1n}C_{1n}	
+\end{equation}
+The cofactor expansion across the 1st column of A
+\begin{equation}
+	detA=a_{11}C_{11}+a_{21}C_{21}+\dots+a_{n1}C_{n1}	
+\end{equation}
+\textbf{Triangular Matrix}: A matrix that has all zeros
+either below or above the main diagonal. \\
+Upper triangular: 0's below the diangonal\\
+Lower Triangular: 0's above the diagonal
+\end{subsection}
+
+\begin{subsection}{IMT Patterns}
+$a\Rightarrow j\Rightarrow d\Rightarrow c\Rightarrow b\Rightarrow 
+a\\
+a\Rightarrow k\Rightarrow g\Rightarrow a\\
+g\Leftrightarrow h\Leftrightarrow i \\
+d\Leftrightarrow e\Leftrightarrow f \\
+a\Leftrightarrow l$
+\\
+See Theorem 8 for more
+\end{subsection}
+
+\end{section}
+\end{document}
