@@ -3,7 +3,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage[dutch]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage[left=20mm, right=20mm, top=10mm, bottom=20mm]{geometry}
 
@@ -219,7 +218,7 @@ A set of vectors $\in \mathbb{R}^n$ is Linearly Dependent(LD) if
 there exist weights $(c_1,c_2,\dots,c_n)$, not all zero where
 $\lbrace c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+c_n\textbf{v}_n\rbrace=0$
 \begin{itemize}
-\item{$m>n=#col>#row=#vectors>#dimenstions$}
+\item{$m>n=col>row=vectors>dimenstions$}
 \item{If a vector is a scalar multiple of another in the set, LD}
 \end{itemize}
 \end{subsection}
@@ -340,12 +339,10 @@ $\textbf{x}\in\mathbb{R}^m$
 \item{$(A+B)^T=A^T+B^T$}
 \item{$(rA)^T=rA^T$}
 \item{$(AB)^T=A^TB^T$}
-\end{itemize}
-\\
-\textbf{Theorem 5}: If A is an n*n matrix & is invertible, then for every $\textbf{b}\in\mathbb{R}^n$ the equation
-$A\textbf{x}=\textbf{b}$ has a unique solution: 
-$A^{-1}\textbf{b}=\textbf{x}$
-\\
+\end{itemize} \\
+\textbf{Theorem 5}: If A is an n*n matrix & is invertible, then for 
+every $\textbf{b}\in\mathbb{R}^n$ the equation $A\textbf{x}=\textbf{b}$ 
+has a unique solution: $A^{-1}\textbf{b}=\textbf{x}$ \\
 \noindent\textbf{Theorem 6}: If A is invertible, assume:
 \begin{itemize}
 \item{$(A^{-1}^{-1}=A$}
@@ -435,7 +432,7 @@ $A^{-1}$ once A is in RREF.
 \textbf{Theorem 2.8}: The Invertible Matrix Theorem (IMT) -- Let A be a
 square n*n matrix.
 \begin{enumerate}
-\item{If any statements below aretrue, all are true. 
+\item{If any statements below are true, all are true. 
 If any statements below are false all are false}
 \begin{enumerate}
 \item{A is an invertible matrix}
@@ -509,7 +506,8 @@ A invertible \Leftarrow\Rightarrow \Delta\neq0 \Rightarrow detA=\Delta
 a_{31} & a_{32} \end{bmatrix} 
 \end{equation}
 
-\noindent\textbf{Determinant Definition}: For n=2, the determinant of an n*n
+\noindent\textbf{Determinant Definition}: For n=2, 
+the determinant of an n*n
 matrix A is \\ 
 \begin{equation}
 detA=a_{11}detA_{11}-A_{12}detA_{12}+\dots+(-1)^{1+n} a_{1n}detA_{1n}=
@@ -524,7 +522,7 @@ $C_{ij}$
 \end{equation}
 The cofactor expansion across the 1st row of A
 \begin{equation}
-	detA=a_{11}C_{11}+a_{12}C_{12}+\dots+a_{1n}C_{1n}	
+detA=a_{11}C_{11}+a_{12}C_{12}+\dots+a_{1n}C_{1n}	
 \end{equation}
 The cofactor expansion across the 1st column of A
 \begin{equation}
@@ -532,7 +530,7 @@ The cofactor expansion across the 1st column of A
 \end{equation}
 \textbf{Triangular Matrix}: A matrix that has all zeros
 either below or above the main diagonal. \\
-Upper triangular: 0's below the diangonal\\
+Upper triangular: 0's below the diagonal\\
 Lower Triangular: 0's above the diagonal
 \end{subsection}
 
@@ -546,6 +544,103 @@ a\Leftrightarrow l$
 \\
 See Theorem 8 for more
 \end{subsection}
-
 \end{section}
+
+\newpage
+\begin{section}{Determinant properties and Cramer's Rule}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 3.3}: Row operations:\\
+Let A be a square matrix. 
+\begin{enumerate}
+\item{If a multiple of one row of A is added to another row to produce
+a matrix B (Replacement ERO), the detB=detA}
+\item{If two rows of A are interchanged to produce B, then detB=-detA}
+\item{If one row of A is multiplied by K to produce B, then detB=KdetA}
+\end{enumerate}
+\textbf{Theorem 3.5}: if A is an n*n matrix, $det(A^{T})=detA$\\
+\noindent\textbf{Theorem 3.6}: Multiplicative Property. If A and B are n*n
+then \begin{equation}det(AB)=detAdetB$\end{equation}
+
+\noindent\textbf{Theorem 3.7 (Cramer's Rule}: Let A be an invertible 
+matrix, for any $\textbf{b}\in\mathbb{R}^{n}$, the unique solution
+\textbf{x} of A\textbf{x} has entries given by $x_{i}=\frac{detA_{i}
+\textbf{b}}{detA}$\\
+The Proof of this is shown by:
+\begin{equation}
+A=\begin{bmatrix} \textbf{a}_{1}, \textbf{1}_{2},\dots,\textbf{x},
+\dots, \textbf{a}_{n} \end{bmatrix} \Rightarrow AI_{i}\textbf{x}=
+\begin{bmatrix} A\textbf{e}_{1},A\textbf{e}_{2},\dots,A\textbf{x} 
+,\dots,A\textbf{e}_{n} \end{bmatrix} 
+\end{equation} Which, through the det multiplicative property gives us
+\begin{equation}
+	detA(det(I_{i}(\textbf{x})))=det(A_{i}(\textbf{b})
+\end{equation} \\
+\noindent\textbf{Theorem 3.9}: If A is a 2x2 matrix, the area of the
+paralleogram determined by the columns of A is |detA| \\
+/noindent if A is a 3x3 matrix, the volume of the parallelipiped determined
+by the columns of A is $\lvert detA\rvert$ 
+\\
+\noindent\textbf{Theorem 3.10}: Let T: $\mathbb{R}^{2}\Rightarrow
+\mathbb{R}^{2}$ be a linear transformation by a 2x_2 matrix A, if S is a 
+parallelogram in $\mathbb{R}^{2}$, then\\
+Area of T(S) = |detA|(Area of S)\\
+If T: $\mathbb{R}^{3}\Rightarrow \mathbb{R}^{3}$ is determined by a 3x3
+matrix A, S is a parallelopiped in $\mathbb{R}^{3}$\\
+Volume of T(S) = |detA|(Volume of S)
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{understand how ERO's affect the determinants, and how to 
+use this (together with determinants of diagonal matrices) 
+to compute the determinant}
+\item{Cramer's Rule for solving systems of equations}
+\item{Properties of Determinants}
+\end{enumerate}
+\end{subsection}
+\end{section}
+\begin{subsection}{Determinant Operations}
+Using Theorem 3, ERO's to attain a diagonal matrix can get the determinant.
+\begin{equation}{Example:}
+\begin{bmatrix} 0&1&5 \\ 3&-6&9\\ 2&6&1 \end{bmatrix} \Rightarrow
+\begin{bmatrix} 3&-6&9\\ 0&1&5 \\ 2&6&1 \end{bmatrix} \Rightarrow
+\begin{bmatrix} 1&-2&3\\ 0&1&5\\ 0&0&-55 \end{bmatrix}\Rightarrow 
+detA=1*1*(-55)*(-1)*3
+\end{equation}
+Suppose a matrix A has been reduced to echelon form U by row replacement 
+operations and row interchanges.\\
+If there are r total interchanges then THM 3 says:
+\begin{equation} DetA=(-1)^{r}detU \end{equation}
+Since U is in Echelon Form, (triangular), detU is the product of the
+diagonal entries $u_{11},u_{22},\dots,u_{nn}$\\
+If A is invertible, the entries on the diagonal are all pivots
+$A~I_{n}$\\
+If A is non-invertible, at least one of these entries of the row reduced
+form $u_{11},u_{22},\dots,u_{nn}$ must be 0, and the determinant must
+also be equal to 0.
+\begin{equation}{When~A~is~invertible:}
+detA=(-1)^{r}*(products~of~the~pivots~of~U) \end{equation}
+\begin{equation}{When~A~is~singular:}detA=O\end{equation}
+\end{subsection}
+
+\begin{subsection}{Column Replacement for Cramer's}
+Look at Theorem 3.7\\
+For any n*n matrix A and any $\textbf{b}\in\mathbb{R}^{n}$, let
+\textbf{b} be the matrix obtained from A by replacing column i by the 
+vector \textbf{b}.
+$A_{i}\textbf{b}=\begin{bmatrix} \textbf{a}_{1}, \textbf{a}_{2},\dots,
+\textbf{b},\dots, a_{n} \end{bmatrix}$
+\end{subsection}
+\begin{subsection}{Geometrical view of Determinants}
+Look at Theorem 3.9
+Example of how this works:
+\begin{equation}
+\lvert det\begin{bmatrix} a&0\\0&d \end{bmatrix} \rvert = 
+\lvert ad \rvert = A~of~a~rectangle
+\end{equation}
+Convert points to starting at (0,0) and get the determinant from there. \\
+The conclusion of Theorem 10 holds whenever S is a region $\in\mathbb{R}^2$
+with finite area or a region $\in\mathbb{R}^{3}$ with finite volume. \\
+
+\end{subsection}
+
 \end{document}
