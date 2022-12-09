@@ -10,26 +10,24 @@
 
 \begin{document}
 \begin{section}{What is Linear Algebra}
-	\begin{subsection}*{Topics}
+\begin{subsection}*{Topics}
 \begin{enumerate}
 		\item{What Linear Algebra is}
 		\item{Elementary Row Operations (ERO's)}
 		\item{Echelon form}
 \end{enumerate}
-	\end{subsection}
-	\begin{subsection}{What is Linear Algebra?}
-	\textbf{The Basic Definition:} Linear Algebra
-	is the study of solving linear equations.\\
-	These generally come in the form of
-	$a_1*x_1+a_2*x_2+...+a_n*x_n=b$\\
-	We are looking for intersections. This can be 
-	done through substitution, general algebraic methods
-	(ERO's) and matrix rotation. \\
+\end{subsection}
+\begin{subsection}{What is Linear Algebra?}
+\textbf{The Basic Definition:} Linear Algebra is the study of 
+solving linear equations.\\ These generally come in the form of
+$a_1*x_1+a_2*x_2+...+a_n*x_n=b$\\ We are looking for intersections.
+This can be done through substitution, general algebraic methods 
+(ERO's) and matrix rotation. \\
 \end{subsection}
 \begin{subsection}{Elementary Row Operations (Three Main Types)}
 \begin{enumerate}
 	\item{\textbf{Replacement}: Replace one row by the 
-		sum of itself & a scalar multiple of another.}
+		sum of itself and a scalar multiple of another.}
 	\item{\textbf{Interchange}: Switch two rows.}
 	\item{\textbf{Scaling}: Multiply all entries in a row by
 		a non-zero constant}
@@ -43,12 +41,12 @@
 		the right of the row above it}
 	\item{All entries are in a column below a leading entry
 		are zeroes}
-	\end{itemize}
-	\\ \textbf{Reduced Echelon Form}: A unique solution!
-	\begin{itemize}
+\end{itemize}
+\textbf{Reduced Echelon Form}: A unique solution!
+\begin{itemize}
 \item{The leading entry in each non-zero row is a 1}
 \item{Each leading 1 is the only non-zero entry in the column}
-	\end{itemize}
+\end{itemize}
 \end{subsection}
 
 \begin{subsection}{Miscellaneous Notes from Day 1}
@@ -69,7 +67,7 @@
 
 \begin{subsection}*{Theorems}
 \textbf{Theorem 3}: If A is an m*n matrix with columns
-$\textbf{a}_1, \textbf{a}_2,\dots,\textbf{a}_n$ & if 
+$\textbf{a}_1, \textbf{a}_2,\dots,\textbf{a}_n$ and if 
 $b \in \mathbb{R}^n$, then matrix equation $A\textbf{x}=\textbf{b}$
 has the same solution as the vector equation
 $x_1\textbf{a}_1+x_2\textbf{a}_2+\dots+x_n\textbf{a}_n=\textbf{b}$
@@ -77,7 +75,7 @@ and the system with the augmented matrix
 $\begin{bmatrix} 
 \textbf{a}_1 & \textbf{a}_2 & \textbf{a}_n & \textbf{b} \end{bmatrix}$ 
 \\ \\
-\textbf{Theorem 4}: For an m*n matrix A the following statements
+\textbf{Theorem 4}: For an m*n matrix A, the following statements
 are logically equivalent
 \begin{enumerate}
 	\item{For all $\textbf{b}\in\mathbb{R}^m$ 
@@ -99,30 +97,30 @@ are logically equivalent
 \end{subsection}
 
 \begin{subsection}{Span and vectors}
-	\textbf{Vectors}: A matrix with one column and m dimensions
-	where m is #of rows.
+\textbf{Vectors}: A matrix with one column and m dimensions
+where m is number of rows.
 \begin{itemize}
 	\item{$\textbf{u}=\langle1,2\rangle$ 
 	defines $\mathbb{R}^2$}
-	\item{$\textbf{v}=\langle1,2,-5\rangle$ defines $\mathbb{R}^3$
+\item{$\textbf{v}=\langle1,2,-5\rangle$ defines $\mathbb{R}^3$}
 \end{itemize}
-\\ \textbf{Linear Combinations of Vectors}: a set where 
+\textbf{Linear Combinations of Vectors}: a set where 
 $\textbf{y}=c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+c_n\textbf{v}_n$
 where $(c_1,c_2,\dots,c_p)$ are scalars (weights)\\
 
-\\ \noindent\textbf{Span}: The set of all linear combinations Span
-    	$\lbrace \textbf{v}_1 , \dots , \textbf{v}_p \rbrace$ where 
-	$\textbf{b}=c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+
-	c_p\textbf{v}_p \in \mathbb{R}$
+\noindent\textbf{Span}: The set of all linear combinations Span
+$\lbrace \textbf{v}_1 , \dots , \textbf{v}_p \rbrace$ where 
+$\textbf{b}=c_1\textbf{v}_1+c_2\textbf{v}_2+\dots+
+c_p\textbf{v}_p \in \mathbb{R}$
 \begin{itemize}
 	\item{e.g span of $\textbf{v} \in \mathbb{R}^2$ is a line}
 	\item{e.g span of $\textbf{v}+\textbf{u} 
 	\in \mathbb{R}^3$ is a plane}
 \end{itemize}
 By the definition of 
-$A\textbf{x}=x_1\textbf{a}_1+\dots+\x_n\textbf{a}_n$ through Theorem 3,
-$A\textbf{x}=\textbf{b}$ has a solution iff \textbf{b} is the span of A
-columns.
+$A \textbf{x}=x_1 \textbf{a}_1+\dots + \textbf{x}_n \textbf{a}_n$ 
+through Theorem 3,$A\textbf{x}=\textbf{b}$ has a solution iff 
+\textbf{b} is the span of A columns.
 \end{subsection}
 \begin{subsection}{Algebraic Properties of Vectors}
 	For all \textbf{u},\textbf{v},\textbf{w} $\in \mathbb{R}^n$
@@ -130,7 +128,7 @@ columns.
 \begin{enumerate}
 	\item{$\textbf{v}+\textbf{u}=\textbf{u}+\textbf{v}
 	\Rightarrow (\textbf{u}+\textbf{v})+\textbf{w}=
-	\textbf{u}+(\textbf{v}+\textbf{w})$
+\textbf{u}+(\textbf{v}+\textbf{w})$}
 \item{$\textbf{u}+\textbf{0}=\textbf{u}$}
 \item{$c(\textbf{u}+\textbf{v})=c\textbf{u}+c\textbf{v}$}
 \item{$(c+d)\textbf{u}=c\textbf{u}+d\textbf{u}$}
@@ -146,7 +144,7 @@ columns.
 \textbf{Theorem 6}: Suppose the equation $A\textbf{x}=\textbf{b}$ is
 consistent for some \textbf{b}, then the solution set of all the 
 vectors of the form is $\textbf{w}=\textbf{p}+\textbf{v}_n$, where
-$\textbf{v}_n$ is any solution of the homegenous 
+$\textbf{v}_n$ is any solution of the homogenous 
 system $A\textbf{x}=\textbf{0}$
 \\
 \\ \textbf{Theorem 7}: A set of 2+ vectors $S:\lbrace\textbf{v}_1,\dots
@@ -185,8 +183,8 @@ vectors $S:\lbrace\textbf{v}_1,\textbf{v}_n\rbrace$
 
 \begin{subsection}{Parametric Form}
 \begin{enumerate}
-	\item{Row reduce augmented matrix to reudced echelon form}
-	\item{Express base cariables in terms of free variables in 
+	\item{Row reduce augmented matrix to reduced echelon form}
+	\item{Express base variables in terms of free variables in 
 		equation system}
 	\item{Write solution vector \textbf{x}whose entries
 		depend on free variables}
@@ -234,7 +232,6 @@ Vector addition is preserved}
 \item{$A(c\textbf{u})=cA\textbf{u}$} Scalar multiplication
 	is preserved.
 \end{enumerate}
-\\
 \textbf{Theorem 10}: If T is a linear transformation
 $\mathbb{R}^n \Rightarrow \mathbb{R}^m$ then there exists a matrix
 A with dimensions m*n such that $T(\textbf{x})=A\textbf{x}$ for
@@ -255,7 +252,7 @@ be a linear transformation. A is the standard matrix of T
 \begin{itemize}
 \item{T maps $\mathbb{R}^n\Rightarrow\mathbb{R}^m$ iff columns of
 	A span $\mathbb{R}^m$}
-\item{T is one-to-one iff columns's of A are LI}
+\item{T is one-to-one iff columns of A are LI}
 \end{itemize}
 \end{subsection}
 	
@@ -299,7 +296,7 @@ $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
 = \begin{bmatrix} \textbf{x}_1 \\ \textbf{x}_2 \end{bmatrix} $
 \\
 \\ \textbf{Group 1}: Contraction and Expansion 
-$\begin{bmatrix} K & 0 \\ 0 & 1 \end{bmatrix} & 
+$\begin{bmatrix} K & 0 \\ 0 & 1 \end{bmatrix} \mbox{and} 
 \begin{bmatrix} 1 & 0 \\ 0 & K \end{bmatrix}$
 \\
 \textbf{Group 2}: Reflection 
@@ -322,11 +319,11 @@ $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}
 \Large{\textbf{Onto}}: A mapping T: 
 $\mathbb{R}^n\Rightarrow\mathbb{R}^m$ is \textbf{onto} if each
 $\textbf{b}\in\mathbb{R}^m$ is the image of at least one
-$\textbf{x}\in\mathbb{R}^m$ \\
+$\textbf{x}\in\mathbb{R}^n$ \\
 \\ \noindent\Large{\textbf{One-to-one}}: A mapping 
 T: $\mathbb{R}^n\Rightarrow\mathbb{R}^m$ is \textbf{one-to-one}
 if each $\textbf{b}\in\mathbb{R}^m$ is the image of at most one
-$\textbf{x}\in\mathbb{R}^m$
+$\textbf{x}\in\mathbb{R}^n$
 \end{subsection}
 \end{section}
 
@@ -339,25 +336,21 @@ $\textbf{x}\in\mathbb{R}^m$
 \item{$(A+B)^T=A^T+B^T$}
 \item{$(rA)^T=rA^T$}
 \item{$(AB)^T=A^TB^T$}
-\end{itemize} \\
-\textbf{Theorem 5}: If A is an n*n matrix & is invertible, then for 
-every $\textbf{b}\in\mathbb{R}^n$ the equation $A\textbf{x}=\textbf{b}$ 
+\end{itemize} 
+\textbf{Theorem 5}: If A is an n*n matrix and is invertible, then for 
+every $\textbf{b}\in\mathbb{R}^n$ the equation $A\textbf{x}=\textbf{b}$
 has a unique solution: $A^{-1}\textbf{b}=\textbf{x}$ \\
 \noindent\textbf{Theorem 6}: If A is invertible, assume:
 \begin{itemize}
-\item{$(A^{-1}^{-1}=A$}
+\item{$(A^{-1})^{-1}=A$}
 \item{$(AB)^{-1}=A^{-1}B^{-1}$}
 \item{$(A^{T})^{-1}=(A^{-1})^{T}$}
 \end{itemize}
-\\
 \noindent\textbf{Theorem 7}: An n*n matrix $A\in\mathbb{R}^{n}$ is 
 invertible iff A is row equivalent to $I_{n}$ \\
 Any sequence of ERO's that transform $ A\Rightarrow I_{n}$ also 
 transforms $I_{n} \Rightarrow A^{-1}$
-
-\\
 \end{subsection} 
-
 \begin{subsection}*{Topics}
 \begin{enumerate}
 \item{Matrix Properties and Definition}
@@ -366,14 +359,13 @@ transforms $I_{n} \Rightarrow A^{-1}$
 \end{enumerate} \end{subsection}
 
 \begin{subsection}{Matrix Properties and Definitions}
-A,B,C are Matrices where m=n and r&s are scalars
+A,B,C are Matrices where m=n and r and s are scalars
 \begin{enumerate}
 \item{$A+B=B+A$}
 \item{$A+0=A$}
 \item{$r(A+B)=rA+rB$}
 \item{$rs(A)=rA+sA$}
 \end{enumerate}
-\\
 A diagonal Matrix is a matrix where all non-diagonal entries are 0\\
 A zero matrix is a matrix where all entries are 0\\
 A+B adds each corresponding entry $(a+b)_{ij}=a_{ij}+b_{ij}$\\
@@ -385,7 +377,7 @@ Matrix multiplication isn't commutative\\
 \item{$AB=0$ doesn't mean $A=0 or B=0$}
 \item{$AB\neq BA$}
 \end{itemize}
-A is m*n, B & C have operable dimensions
+A is m*n, B and C have operable dimensions
 \begin{itemize}
 \item{$A(BC)=(AB)C$}
 \item{$A(B+C)=AB+AC$ Left Distributive}
@@ -415,7 +407,7 @@ then the entry at row i and column j of AB is
 If $A^{-1}$ exists for A, A is invertible.\\
 Non-invertible $\Leftrightarrow$ singular\\
 $A^{-1}$ is unique\\
-\textbf{The Elementary Matrix}: Obtained bt performing a single ERO on an
+\textbf{The Elementary Matrix}: Obtained by performing a single ERO on an
 identity matrix.\\
 An ERO becomes an EA by performing operations on I.\\
 The inverse of E is the elementary matrix of the same type that transforms
@@ -559,7 +551,10 @@ a matrix B (Replacement ERO), the detB=detA}
 \end{enumerate}
 \textbf{Theorem 3.5}: if A is an n*n matrix, $det(A^{T})=detA$\\
 \noindent\textbf{Theorem 3.6}: Multiplicative Property. If A and B are n*n
-then \begin{equation}det(AB)=detAdetB$\end{equation}
+then
+\begin{equation}
+det(AB)=detAdetB
+\end{equation}
 
 \noindent\textbf{Theorem 3.7 (Cramer's Rule}: Let A be an invertible 
 matrix, for any $\textbf{b}\in\mathbb{R}^{n}$, the unique solution
@@ -577,15 +572,15 @@ A=\begin{bmatrix} \textbf{a}_{1}, \textbf{1}_{2},\dots,\textbf{x},
 \end{equation} \\
 \noindent\textbf{Theorem 3.9}: If A is a 2x2 matrix, the area of the
 paralleogram determined by the columns of A is |detA| \\
-/noindent if A is a 3x3 matrix, the volume of the parallelipiped determined
+\noindent if A is a 3x3 matrix, the volume of the parallelepiped determined
 by the columns of A is $\lvert detA\rvert$ 
 \\
-\noindent\textbf{Theorem 3.10}: Let T: $\mathbb{R}^{2}\Rightarrow
-\mathbb{R}^{2}$ be a linear transformation by a 2x_2 matrix A, if S is a 
-parallelogram in $\mathbb{R}^{2}$, then\\
-Area of T(S) = |detA|(Area of S)\\
-If T: $\mathbb{R}^{3}\Rightarrow \mathbb{R}^{3}$ is determined by a 3x3
-matrix A, S is a parallelopiped in $\mathbb{R}^{3}$\\
+\noindent\textbf{Theorem 3.10}: Let T: $\mathbb{R}^{2}\Rightarrow \mathbb{R}^{2}$ 
+be a linear transformation by a 2*2 matrix A, if S is a 
+parallelogram in $\mathbb{R}^{2}$, then \\
+Area of $T(S) = |detA|(Area of S)$ \\
+If T: $\mathbb{R}^{3}\Rightarrow \mathbb{R}^{3}$ is determined by a 3*3
+matrix A, S is a parallelepiped in $\mathbb{R}^{3}$\\
 Volume of T(S) = |detA|(Volume of S)
 \end{subsection}
 \begin{subsection}*{Topics}
@@ -597,7 +592,6 @@ to compute the determinant}
 \item{Properties of Determinants}
 \end{enumerate}
 \end{subsection}
-\end{section}
 \begin{subsection}{Determinant Operations}
 Using Theorem 3, ERO's to attain a diagonal matrix can get the determinant.
 \begin{equation}{Example:}
@@ -642,5 +636,271 @@ The conclusion of Theorem 10 holds whenever S is a region $\in\mathbb{R}^2$
 with finite area or a region $\in\mathbb{R}^{3}$ with finite volume. \\
 
 \end{subsection}
+\end{section}
+\newpage
 
+\begin{section}{Vector Spaces and Kernels}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 4.1}: If $\textbf{v}_{1},\dots,\textbf{v}_{p}$ are in a
+vector space V.\\
+Then, Span$\{\textbf{v}_{1},\dots,\textbf{v}_{p}\}$
+is a subspace of V\\
+\\
+\textbf{Theorem 4.2}: The Null space of an m*n matrix A is a subspace
+of $\mathbb{R}^{n}$\\
+\textbf{Proof}:
+\begin{itemize}
+\item{$\textbf{0}\in NulA$ because $A\textbf{0}=\textbf{0}$}
+\item{$\textbf{u},\textbf{v}\in NulA \Rightarrow A\textbf{u}-\textbf{0},
+A\textbf{v}=\textbf{0}\Rightarrow A\textbf{u}+A\textbf{v}=\textbf{0}$}
+\item{$\textbf{u}\in NulA \Rightarrow A\textbf{u}=cA\textbf{u}=0$}
+\end{itemize}
+\textbf{Theorem 4.3}:
+The column space of an m*n Matrix A is a subspace of $\mathbb{R}^{m}$
+\\
+\textbf{Theorem 4.4}: An indexed set (Put in a certain order) of 2 or
+more vectors $\{\textbf{v}_{1}, \dots, \textbf{v}_{p}\}$ with 
+$\textbf{v}_{1}\neq 0$, is linearly dependent iff some $\textbf{v}_{j}$ 
+$j>1$ is a linear comination of the vectors $\textbf{v}_{1},\dots,
+\textbf{v}_{j-1}$
+\noindent\textbf{Theorem 5}: Let $S=\{\textbf{v}_{1},\dots,
+\textbf{v}_{p}\}$ be set in V and let $H=\mbox{ Span}\{
+\textbf{v}_{1},\dots,\textbf{v}_{p}\}$
+\begin{itemize}
+\item{If one of the vectors in S, denoted $\textbf{v}_{k}$ is a 
+linear combination of the reamining vectors in S, then the set
+ formed from S by removing $\textbf{v}_{k}$ still span H}
+\item{If $H=\{\textbf{0\}}$ (set of just the \textbf{0} vector)
+, some subset of S is a basis of H} 
+\end{itemize}
+\noindent\textbf{Theorem 4.6}: The Pivot columns of Matrix A form a basis for ColA
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{Vector Spaces}
+\item{Null Spaces}
+\item{Column Spaces}
+\item{Kernel}
+\item{Bases}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Vector Spaces}
+\textbf{Vector Space}: A vector space is a non-empty set V of objects,
+called vectors, on whihc are defined two operations, called addition
+and multiplication by scalars ($\mathbb{R}$) subject to the 10 axioms
+listed below. The Axioms must hold for all the vectors \textbf{u},
+\textbf{w}, and \textbf{v} in V and for all scalars c and d
+\begin{enumerate}
+\item{The sum of \textbf{u} and \textbf{v}, denoted by,
+$\textbf{u}+\textbf{v}$, is in V}
+\item{$\textbf{u}+\textbf{v}=\textbf{v}+\textbf{u}$}
+\item{$(\textbf{u}+\textbf{v})+\textbf{w}=
+\textbf{u}+(\textbf{v}+\textbf{w})$}
+\item{There is a zero vector \textbf{0} in V such that 
+$\textbf{u}+0=\textbf{u}$}
+\item{For each \textbf{u} in V, there is a vector -\textbf{u} in V
+such that $\textbf{u}+(-\textbf{u}=\textbf{0}$}
+\item{The scalar multiple of \textbf{u}by c, denoted by c\textbf{u}, is
+in V}
+\item{$c(\textbf{u}+\textbf{v})=c \textbf{u}+c \textbf{v}$}
+\item{$(c+d)\textbf{u}=c\textbf{u}+d\textbf{u}$}
+\item{$c(d\textbf{u})=(cd)\textbf{u}$}
+\item{$1\textbf{u}=\textbf{u}$}
+\end{enumerate}
+$P_{n}$ for $n \geq 0$, polynomials with degtee of at most n
+$P(t)=a_0+a_1t+a_2t^{2}+\dots+a_{n}t^{n}$\\
+$q(t)=b_1t+b_2t^{2}+\dots+b_{n}t^{n}$\\
+Addition:
+$(p+q)(t)=p(t)+q(t)$
+Scalar Multiplication:
+$cp(t)=cp(t)=ca_0+ca_1n+\dots+ca_{n}^{n}$
+\\ \\
+\textbf{Subspaces:} A subspace of vector space V is a subset H of V that 
+has three primary properties\\
+\begin{enumerate}
+\item{The zero vector of V is in H}
+\item{H is closed under vector addition $\Rightarrow \textbf{u},
+\textbf{v} \in H, \textbf{u}+\textbf{v}\in H$}
+\item{H is closed under multiplication by scalars\\
+For any \textbf{u} in H , any scalar c, $c\textbf{u}\in H$}
+\end{enumerate}
+\begin{equation}
+\Biggl\{ \begin{bmatrix} s \\ t \\ 0 \end{bmatrix} 
+\mbox{: s and t are real} \Biggl\}
+\end{equation}
+All three aspects of the subspace definition are met
+\begin{enumerate}
+\item{$\textbf{0}=\begin{bmatrix} 0\\ 0\\ 0 \end{bmatrix} \in H$}
+\item{$\begin{bmatrix} s_1\\ t_1\\ 0 \end{bmatrix} 
+\begin{bmatrix} s_2\\ t_2\\ 0 \end{bmatrix}= 
+\begin{bmatrix} s_1+s_{2}\\ t_1+t_2\\ 0 \end{bmatrix}$}
+\item{$c(\begin{bmatrix} s\\ t\\ 0 \end{bmatrix}) = \begin{bmatrix} 
+cs\\ ct\\ 0\end{bmatrix} \in H$}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Null Space}
+\begin{equation}
+\begin{cases}
+	x_1-3x_2-2x_3=0 \\
+	-5x_1+9x_2+x_3=0\\
+\end{cases}
+\end{equation}
+\begin{equation}
+\Rightarrow \begin{bmatrix} 1&-3&-2\\ -5&9&1 \end{bmatrix} 
+\Rightarrow
+\textbf{x}=\begin{bmatrix} x_1\\ x_2\\ x_3 \end{bmatrix} 
+\end{equation}
+We call the set of x that satisfy $A\textbf{x}=\textbf{0}$ the 
+null space of A.
+\\ \noindent\textbf{Definition:} The null space of an m*n matrix A,
+denoted by NulA is the set of all solutions of the homogenous equation 
+$a\textbf{x}= \textbf{0}$\\
+NulA $=\{ \textbf{x} \mbox{ is in } \mathbb{R}^{n} \mbox{and} 
+A\textbf{x}=\textbf{0}\}$
+\end{subsection}
+
+\begin{subsection}{Column Space}
+\noindent \textbf{Definition}: 
+The Column Space of an m*n matrix A (ColA) is the set of all linear 
+combinations of the columns of A, $A=\begin{bmatrix} 
+\textbf{a}_{1}, \textbf{a}_{2},\dots, \textbf{a}_{n} \end{bmatrix}$
+\begin{equation}
+\begin{cases}
+\mbox{ColA}=Span\{\textbf{a}_{1},\dots, \textbf{a}_{n}\} \\
+\mbox{ColA} = \{ \textbf{b}: \textbf{b}=A\textbf{x} \mbox{ for } 
+	\textbf{x} \in\mathbb{R}^{n}\}
+\end{cases}
+\end{equation}
+\end{subsection}
+\begin{subsection}{Kernel}
+A linear transformation T from a vector space V into a vector space W
+is a rule that assigns each vector $\textbf{x}\in V$ to a unique vector
+$T(\textbf{x})$ in w such that:
+\begin{itemize}
+\item{$T(\textbf{u}+\textbf{v}=T(\textbf{u}+T\textbf{v}$ for all
+	$\textbf{u},\textbf{v}\in V$}
+\item{$T(c\textbf{u})=cT(\textbf{u})$ for all \textbf{u} in V and 
+	scalars c}
+\item{The Kernel (or null space) is the set of all \textbf{u} in V such
+that $T(\textbf{u})=\textbf{0}$} with the kernel a subspace of V
+\item{The range of T is the set of all vectors in W of the form
+	T(\textbf{x}) for BLANK is a subspace of W.}
+\end{itemize}
+\end{subsection}
+
+\begin{subsection}{Bases}
+\textbf{Basis Definition}: Let H be a subspace of vector space V,
+an indexed set of vectors
+$B=\{\textbf{b}_{1},\dots,\textbf{b}_{p}\}$ in V is a basis for H if
+\begin{itemize}
+\item{B is a linearly independent set}
+\item{$H=\mbox{Span}\{\textbf{b}_{1},\dots,\textbf{b}_{p}\}$}
+\end{itemize}
+\end{subsection} \end{section}
+
+\newpage
+\begin{section}{Dimension in Vector Spaces and Rank}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 4.9}: If a vector space V has a basis B
+$B=\{\textbf{b}_{1},\dots,\textbf{b}_{n}\}$, then and set in V 
+containing more than n vectors must be linearly dependent\\
+\noindent\textbf{Theorem 4.10}: If a vector space V has a basis of
+n vectors, then every basis of V must consist of exactly n vectors.
+\\ \textbf{Proof}: let $B_1$ be a basis of n vectors and $B_2$ 
+be another basis of V. Since $B_1$ is a basis and $B_2$ 
+is linearly independent $B_2$ has no more than n vectors, by THM 9.
+Since $B_2$ is a basis and $B_1$is linearly independent, $B_2$ 
+has at least n vectors. Thus $B_2$ consists of exactly n vectors.
+\\ \noindent \textbf{Theorem 4.11}:  Let H be a subspace of a finite
+dimensional vector space V, any LI set in H can be expanded, if 
+necessary, to form a basis of H. Also, H is finite dimensional and
+$DimH \leq DimV$
+\\ \noindent \textbf{Theorem 4.12}: The Basis Theorem\\
+\begin{itemize}
+\item{let V be a p-dimensional vector space, $v\geq 1$}
+\item{Any linearly independent set of exactly p elements in V is automatically a 
+	basis for V}
+\item{Any set of p elements that spans V is automatically a basis for V}
+\end{itemize}
+\noindent \textbf{Theorem 4.13}: if 2 matrices A and B are row equivalent, then 
+their row spaces are the same. \\
+If B is in echelon form, the non-Zero rows of B form a basis for the row space of A
+as well as for that of B. \\
+\noindent \textbf{Theorem 4.14 (The Rank Theorem)}:
+\begin{itemize}
+\item{The dimension of the column space and the row space of an m*n matrix A are equal}
+\item{This common dimension, the rank of A, also equals the number of pivot positions
+in A and satisfies: $\mbox{rank}A+\mbox{dim NulA}=n$} 
+\end{itemize}
+\noindent \textbf{New IMT}: Let A be n*n, A is invertible, also applies to $A^{T}$
+\begin{itemize}
+\item{The Columns of A form a basis of $\mathbb{R}^{n}$}
+\item{$ColA=\mathbb{R}^{n}$}
+\item{$dimColA=n$}
+\item{$rankA=n$}
+\item{$NulA=\{0\}$}
+\item{dimNulA$=0$}
+\end{itemize}
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{Dimensions}
+\item{Row Space}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Dimensions}
+\textbf{Dimension Definition}:	If V is spanned by a finite set,
+then V is said to be finite dimensional and the dimension of V,
+written as DimV is the number of vectors in a basis for V. If V is
+not spanned by a finite set, then V is of infinite dimensions.\\
+\\ The Standard basis of $\mathbb{R}^{n}$ contains n vectors.
+\begin{equation}
+\textbf{e}_{1}=\begin{bmatrix} 1\\ 0 \\ \dots \\ 0 \end{bmatrix}
+\textbf{e}_{2}= \begin{bmatrix} 0\\ 1\\ 0\\ \dots \\ 0 \end{bmatrix}
+\textbf{e}_{n}= \begin{bmatrix} 0\\ 0\\ 0\\ \dots \\ n \end{bmatrix}
+\end{equation}
+The standard polynomial basis $\{1,t,t^{2}\}$ spans P2. dimP2=3
+Let $H=Span\{\textbf{v}_1,\textbf{v}_2$ where $\textbf{v}_{1}$\\
+The subspaces of $\mathbb{R}^{3}$ can be classified by dimension.\\
+\begin{itemize}
+\item{0-dimensional: only the zero subspace
+$\begin{bmatrix} 0\\ 0\\ 0 \end{bmatrix}$ }
+\item{1-dimensional: Any subspace defined by a single nonzero vector
+	with lines through the origin}
+\item{2-dimensional: spanned by two LI vectors (A plane through the 
+	origin}
+\item{3-dimensional: Only $\mathbb{R}^{3}$ itself. Any 3 LI vectors 
+in $\mathbb{R}^{3}$ span $\mathbb{R}^{3}$}
+\end{itemize}
+The pivot columns of a matrix A form a basis for ColA $A=[ \textbf{a}_{1}, \dots, 
+\textbf{a}_{n}]$ \\
+Then we know the dimensions of ColA as span as we know the pivot columns. Finding the 
+dimensions of NulA seems like it would take more, but there's a shortcut. \\ \\
+Assume A is m*n and $A\textbf{x}=0$ has k free variables. The method for producing a
+basis for NulA will produce exactly k linearly independent vectors.\\
+\begin{itemize}
+\item{dim ColA is the number of pivot columns of A}
+\item{dim NulA is the number of free variables in the equation $A\textbf{x}=0$}
+\end{itemize}
+\begin{equation}
+\{\mbox{RankA (number of pivot cols)}\} + \{\mbox{dimNulA (number of non-pivot cols)}\}
+=\{\mbox{n (total number of columns)}\}
+\end{equation}
+\end{subsection}
+\begin{subsection}{Row Space}
+\textbf{Definition}: The row space is the set of all linear combinations of the
+row vectors.\\
+The rows of A correspond to the columns of $A^{T} \Rightarrow \mbox{RowA=ColA^{T}}$
+\\ If we know a linear dependence relation on any of the rows of A, we could use
+the Spanning Set Theorem to shrink the set to a basis
+\end{subsection}
+\begin{subsection}{Rank}
+\textbf{Definition}: The rank of A is the dimension of the column space of A
+\begin{equation}
+\mbox{RankA}=\mbox{dim ColA}
+\end{equation}
+Since $RowA=ColA^{T}$, $\mbox{dim RowA}=\mbox{rank}A^{T}$ \\
+Look at THM 14 and 15
+\end{subsection}
+\end{section}
 \end{document}
