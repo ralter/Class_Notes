@@ -4,11 +4,19 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amsmath, amssymb}
-\usepackage[left=20mm, right=20mm, top=10mm, bottom=20mm]{geometry}
+\usepackage[left=25mm, right=25mm, top=20mm, bottom=20mm]{geometry}
 
 \pdfsuppresswarningpagegroup=1
-
+\title{MA220 Linear Algebra. Block 4 2022}
+\author{Reuben Alter}
+\date{}
 \begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\newpage
+
 \begin{section}{What is Linear Algebra}
 \begin{subsection}*{Topics}
 \begin{enumerate}
@@ -661,14 +669,14 @@ The column space of an m*n Matrix A is a subspace of $\mathbb{R}^{m}$
 \textbf{Theorem 4.4}: An indexed set (Put in a certain order) of 2 or
 more vectors $\{\textbf{v}_{1}, \dots, \textbf{v}_{p}\}$ with 
 $\textbf{v}_{1}\neq 0$, is linearly dependent iff some $\textbf{v}_{j}$ 
-$j>1$ is a linear comination of the vectors $\textbf{v}_{1},\dots,
+$j>1$ is a linear combination of the vectors $\textbf{v}_{1},\dots,
 \textbf{v}_{j-1}$
-\noindent\textbf{Theorem 5}: Let $S=\{\textbf{v}_{1},\dots,
+\\ \noindent\textbf{Theorem 4.5}: Let $S=\{\textbf{v}_{1},\dots,
 \textbf{v}_{p}\}$ be set in V and let $H=\mbox{ Span}\{
 \textbf{v}_{1},\dots,\textbf{v}_{p}\}$
 \begin{itemize}
 \item{If one of the vectors in S, denoted $\textbf{v}_{k}$ is a 
-linear combination of the reamining vectors in S, then the set
+linear combination of the remaining vectors in S, then the set
  formed from S by removing $\textbf{v}_{k}$ still span H}
 \item{If $H=\{\textbf{0\}}$ (set of just the \textbf{0} vector)
 , some subset of S is a basis of H} 
@@ -686,7 +694,7 @@ linear combination of the reamining vectors in S, then the set
 \end{subsection}
 \begin{subsection}{Vector Spaces}
 \textbf{Vector Space}: A vector space is a non-empty set V of objects,
-called vectors, on whihc are defined two operations, called addition
+called vectors, on which are defined two operations, called addition
 and multiplication by scalars ($\mathbb{R}$) subject to the 10 axioms
 listed below. The Axioms must hold for all the vectors \textbf{u},
 \textbf{w}, and \textbf{v} in V and for all scalars c and d
@@ -707,7 +715,7 @@ in V}
 \item{$c(d\textbf{u})=(cd)\textbf{u}$}
 \item{$1\textbf{u}=\textbf{u}$}
 \end{enumerate}
-$P_{n}$ for $n \geq 0$, polynomials with degtee of at most n
+$P_{n}$ for $n \geq 0$, polynomials with degree of at most n
 $P(t)=a_0+a_1t+a_2t^{2}+\dots+a_{n}t^{n}$\\
 $q(t)=b_1t+b_2t^{2}+\dots+b_{n}t^{n}$\\
 Addition:
@@ -802,7 +810,7 @@ $B=\{\textbf{b}_{1},\dots,\textbf{b}_{p}\}$ in V is a basis for H if
 \begin{section}{Dimension in Vector Spaces and Rank}
 \begin{subsection}*{Theorems}
 \textbf{Theorem 4.9}: If a vector space V has a basis B
-$B=\{\textbf{b}_{1},\dots,\textbf{b}_{n}\}$, then and set in V 
+$B=\{\textbf{b}_{1},\dots,\textbf{b}_{n}\}$, then a set in V 
 containing more than n vectors must be linearly dependent\\
 \noindent\textbf{Theorem 4.10}: If a vector space V has a basis of
 n vectors, then every basis of V must consist of exactly n vectors.
@@ -890,7 +898,7 @@ basis for NulA will produce exactly k linearly independent vectors.\\
 \begin{subsection}{Row Space}
 \textbf{Definition}: The row space is the set of all linear combinations of the
 row vectors.\\
-The rows of A correspond to the columns of $A^{T} \Rightarrow \mbox{RowA=ColA^{T}}$
+The rows of A correspond to the columns of $A^{T} \Rightarrow \mbox{RowA=Col}A^{T}$
 \\ If we know a linear dependence relation on any of the rows of A, we could use
 the Spanning Set Theorem to shrink the set to a basis
 \end{subsection}
@@ -901,6 +909,467 @@ the Spanning Set Theorem to shrink the set to a basis
 \end{equation}
 Since $RowA=ColA^{T}$, $\mbox{dim RowA}=\mbox{rank}A^{T}$ \\
 Look at THM 14 and 15
+\end{subsection}
+\end{section}
+\newpage
+\begin{section}{Coordinate systems}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 5.7 - The Unique Representation Theorem}:\\
+Let $B=\{\textbf{b}_{1},\dots,\textbf{b}_{n}\}$ be a basis for a vector space V.\\
+Then for each $\textbf{x} \in V$, there exists a unique set of scalars such that
+$\textbf{x}=c_1\textbf{b}_1+\dots+c_{n}\textbf{b}_{n}$\\
+Existence: Since B spans V there exists scalars $c_1,\dots,c_{n}$ such that 
+$\textbf{x}=c_1\textbf{v}_{1}+\dots+c_{n}\textbf{v}_{n}$\\
+Uniqueness: Assume there exists others scalars $d_1,\dots,d_{n}$ such that 
+$\textbf{x}=d_1\textbf{b}_{1}+\dots+d_{n}\textbf{b}_{n}$\\
+Since B is LI, each of the coefficients $c_{k}-d_{k}=0$, Thus c=d for all entries.
+\\ \noindent \textbf{Theorem 5.8}: Let $\beta=\{\textbf{b}_{1},\dots,\textbf{b}_{n}$
+be a basis for a vector space V.\\
+Then the coordinate mapping $\textbf{x}\Rightarrow [\textbf{x}_{B}$ is a
+one-to-one linear transformation from V onto $\mathbb{R}^{n}$ (This transform is 
+both onto and one-to-one). \\
+Proof:
+\begin{enumerate}
+\item{Demonstrate the coordinate transform is linear}
+\item{Show the transform is one-to-one (uniqueness)}
+\item{Show the transform is onto (existence)}
+\end{enumerate}
+\noindent \textbf{Theorem 5.15}: Let $\beta=\{\textbf{b}_{1},\dots,\textbf{b}_{n}
+\} ~\& ~ C=\{\textbf{c}_{1},\dots,\textbf{c}_{n}\}$ be bases of a vector space V.\\
+Then there is a unique n*n matrix $P_{C\gets B}$ such that 
+\begin{equation}
+	[\textbf{x}]_{C}=P[\textbf{x}]_{B}
+\end{equation}
+The columns of $P C \Leftarrow B$ are the C-coordinate of the vectors in the 
+basis B, change-of-coordinates matrix from B to C 
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{itemize}
+\item{Basis Coordinates}
+\item{Coordinate Systems}
+\item{Transformations Between Spaces}
+
+\end{itemize}
+\end{subsection}
+\begin{subsection}{Basis Coordinates}
+Definition: Suppose $B=\textbf{b}_{1,\dots,\textbf{b}_{n}}$ is a basis for V and 
+$x \in V$. The coordinates of x relative to B (or the B coordinates of \textbf{x})
+are the weights $c_1,\dots,c_{n}$ such that $\textbf{x}=c_1\textbf{b}_{1}+\dots+
+c_{n}\textbf{b}_{n}$
+\begin{equation}
+[x]_{b}=\begin{bmatrix} c_1\\ c_2\\ \dots\\ c_{n} \end{bmatrix} 
+\end{equation}
+The coordinate vector of \textbf{x} relative to $B_1$ or the B-coordinate vector 
+of \textbf{x}. \\
+The Coordinate mapping $\textbf{x}\Rightarrow [x]_{B}$ is the coordinate mapping 
+determined by B.\\
+Standard Basis: $\varepsilon = \{\textbf{e}_1,\textbf{e}_{2}\}$
+\\ The Matrix $[\textbf{b}_1,\textbf{b}_{2}]=\begin{bmatrix} -1&3\\2&1
+\end{bmatrix} $ changes the B-coordinates of a vector $\textbf{x}(c_1,c_2)$ for
+\textbf{x}. \\
+General Basis: $B=[\textbf{b}_{1},\textbf{b}_{2},\dots,\textbf{b}_{n}]$\\
+Let: $P_{B}=[\textbf{b}_{1},\textbf{b}_{2},\dots,\textbf{b}_{n}]$ then the vector
+equation $\textbf{x}=c_1\textbf{b}_{1}+\dots+c_{n}\textbf{b}_{n}$ is equivalent
+to $P_{B}[\textbf{x}]_{B}=\textbf{x}$.\\
+$P_{B}$ is called the change-of-coordinates matrix from B to the standard basis
+in $\mathbb{R}^{n}$ the columns of $P_{B}$ for a basis for $\mathbb{R}^{n}$, so 
+$P_{B}$ is invertible by the IMT $P_{B}^{-1}\textbf{x}=[\textbf{x}]_{B}$\\
+By defining a basis in a vector space V, we can create a coordinate system to 
+relate to $\mathbb{R}^{n}$.
+\end{subsection}
+\begin{subsection}{Coordinate systems}
+\begin{itemize}
+\item{A basis B creates a coordinate system for a vector space}
+\item{Can map abstract vector spaces to $\mathbb{R}^{n}$}
+\item{Different coordinate systems in $\mathbb{R}^{n}$ offer different views of 
+	vector spaces}/
+\end{itemize}
+\textbf{Definition - Isomorphism}: Isomorphisms are transformations that are both one-to-one
+and onto.\\
+Let $\beta$ be the standard matrix for $\mathbb{P}_{3}$ of polynomials $p(t)=a_0+
+a_1t+a_2t^{2}+a_3t^{3} \to \beta=\{1,t,t^{2},t^{3}\}$\\
+\begin{equation}
+[P]_{B}=\begin{bmatrix} a_0\\a_1\\a_2\\a_3 \end{bmatrix} \in \mathbb{R}^{4}
+\end{equation}
+\\ $\beta =\{\textbf{v}_{1},\textbf{v}_{2}\}$ is a basis for 
+$H=Span\{\textbf{v}_{1},\textbf{v}_{2}\}$.\\ 
+The coordinate vector of \textbf{x} relative to B is $[\textbf{x}]_{B}$
+It can be worthwhile to look at vectors in different coordinate systems. Consider
+a Vector \textbf{x} and bases B and C, which relate\\ 
+$[\textbf{x}]_{B} \to [\textbf{x}]_{C} \mbox{ where } B=\{\textbf{b}_{1},
+\textbf{b}_{2}\} \& C=\{\textbf{c}_{1},\textbf{c}_{2}\}$\\ 
+for a vector space V such that 
+$\textbf{b}_{1}=4\textbf{c}_{1}+\textbf{c}_{2} ~\& ~\textbf{b}_{2}=
+-6\textbf{c}_{1}+\textbf{c}_{2}$ \\ Suppose:\\
+\begin{equation}
+[\textbf{x}]_{B}=\begin{bmatrix} 3\\1 \end{bmatrix} 
+[\textbf{x}]_{C}=[[\textbf{b}_{1}]_{c}~[\textbf{b}_{2}]_{c}]\begin{bmatrix} 3\\1
+\end{bmatrix} \to [\textbf{x}]_{C}=\begin{bmatrix} 4&-6\\ 1&1 \end{bmatrix} =
+\begin{bmatrix} 6\\4 \end{bmatrix} 
+\end{equation}
+\end{subsection}
+\begin{subsection}{Transformations Between Spaces}
+Multiplication on the left by $P_{C\gets B}$ convert B-card to C-Card.\\
+$P_{C\gets B}$ is square and has LI columns so it's invertible by the IMT.\\ 
+\begin{equation}
+	(P_{C \gets B})^{-1}[\textbf{x}]_{C}=[\textbf{x}]_{B}
+\end{equation}
+$B=\textbf{b}_{1}+\dots+\textbf{b}_{n} ~\& ~ \varepsilon \{\textbf{e}_{1}+\dots
++\textbf{e}_{n}\}.$ \\
+By this, $[\textbf{b}_{1}]_{\varepsilon}=\textbf{b}_{1}$ and
+$P_{\varepsilon \gets B}$ is $P_{B}$
+\end{subsection}
+\end{section}
+\newpage
+\begin{section}{Eigenvectors and Eigenvectors}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 5.1}: The eigenvalues of a triangular matrix are the diagonal entries
+\\ \noindent \textbf{Theorem 5.2}: If $\{ \textbf{v}_{1},\dots,\textbf{v}_{r}\}$ are 
+eigenvectors that correspond to distinct eigenvalues $\lambda_{1},\dots, \lambda_{r}$
+of an n*n matrix A, then the set $\{ \textbf{v}_{1},\dots,\textbf{v}_{r}\}$ is
+Linearly Independent.\\
+\noindent \textbf{IMT continued}: Let A be an n*n matrix. Then A is invertible iff \\
+the number 0 is not an eigenvalue of A. (in addition to IMT properties from earlier)
+\noindent \textbf{Theorem 5.4}: If we have two n*n matrices A and B, and they are
+ similar, then they have the same characteristic polynomial and the same eigenvalues.
+\\ \textbf{Proof}: If $B=P^{-1}AP$ then $B-\lambda I = P^{-1}AP-\lambda 
+P^{-1}P=P^{-1}(AP-\lambda P)=P^{-1}(A-\Lambda I)P$. \\
+\begin{equation}
+(det(B-\lambda I)=det[P^{-1}(A-\lambda I)P]=det(P^{-1})det(A-\lambda I)det(P)=
+det(A-\lambda I)
+\end{equation}
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{enumerate}
+\item{Eigenvectors}
+\item{Characteristic Equation}
+\item{Similar Matrices}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Eigenvectors}
+The standard process of transformation is $\textbf{x} \to A\textbf{x}$ which can 
+move vectors in a variety of ways.\\ 
+There are special vectors, where the action of A is quite simple. Said A's can scale
+vectors despite it being a matrix transform - the matrix acts as a scalar. \\
+E.g. $A\textbf{x}=2\textbf{x},~A\textbf{x}=4\textbf{x}$:
+\textbf{Eigenvector Definition}: An eigenvector of an n*n matrix A is a nonzero
+vector such that $A\textbf{x}=\lambda \textbf{x}$ for a scalar $\lambda$.\\
+$\lambda$ is an eigenvalue of A if there is a nontrivial solution \textbf{x} of 
+$A\textbf{x}=\lambda \textbf{x}$ with the eigenvector corresponding to $\lambda$\\
+To prove that a $\lambda$ is an eigenvalue of a given matrix A, set $A\textbf{x}=
+\lambda\textbf{x}$ and solve for \textbf{x}.\\
+The \textbf{Eigenspace} is Span $\{[\textbf{x}]\}$\\
+Row reduction can be used to find eigenvectors, but cannot help us find eigenvalues.
+\\ In general, $\lambda$ is an eigenvalue of A iff:
+\begin{equation} \label{Eigenvalues}
+	(A-\lambda )\textbf{x}=\textbf{0}
+\end{equation}
+is a nontrivial solution. \\
+\textbf{Eigenspace}: the set of all solutions is the null space of of the matrix 
+$(A-\lambda I)$\\
+This space is a subspace of $\mathbb{R}^{n}$ called the eigenspace of A corresponding
+to $\lambda$. \\
+To find the possible $\lambda$ of a given A, find det(A-$\lambda$I) such that it is
+equal to zero.\\
+\end{subsection}
+\begin{subsection}{Characteristic Equation}
+A scalar $\lambda$ is an eigenvalue of an n*n matrix A iff $\lambda$ satisfies the
+scalar equation 
+\begin{equation}
+det(A-\lambda I)=0
+\end{equation}
+which we call the characteristic equation.\\
+If A is an n*n matrix, then $det(A-\lambda I)$ is a polynomial of degree n, called
+the characteristic polynomial. The algebraic multiplicity of an eigenvalue is its
+multiplicity as a root of the characteristic equation.
+\end{subsection}
+\begin{subsection}{Similar matrices}
+\textbf{Definition}: A is similar to B iff there is an invertible matrix P such that 
+$P^{-1}AP=B$ or, equivalently, $A=PBP^{-1}$.\\
+Write $Q=P^{-1} \to Q^{-1}BQ=A$. So, B is similar to A. A and B are similar. Goes both
+ways. Changing A into $P^{-1}AP$ is a similarity transformation
+\end{subsection}
+\end{section}
+
+\newpage
+\begin{section}{Diagonalization}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 5.5 "Diagonalization Theorem"}: an n*n matrix A is diagonalizable iff
+A has n linearly independent eigenvectors. \\
+$A=PDP^{-1}$ with a diagonal matrix D, iff the columns of P are n linearly independent
+eigenvectors of A.\\
+The diagonal entries of D are eigenvalues of A that correspond respectively to the
+eigenvectors of P.
+\noindent \textbf{Theorem 5.6}: An n*n matrix with n distinct eigenvalues is 
+diagonalizable (proved by Theorem 5.2) \\
+\noindent \textbf{Theorem 5.7}: Let A be an n*n matrix whose distinct eigenvalues are
+$\lambda_{1}, \dots, \lambda_{p} \to p \in n$ \\
+For $1 \leq k \leq p$, the dimension of the eigenspace for $\lambda_{k}$ is less than
+or equal to the multiplicity of $\lambda_{k}$. \\
+The Matrix A is diagonalizable iff the sum of the dimensions of the eigenspaces=n\\
+\begin{itemize}
+\item{The characteristic polynomial factors completely}
+\item{The dimension of the eigenspace for each $\lambda_{k}$ = multiplicity of
+$\lambda_{k}$}
+\item{if A is diagonalizable and $B_{k}$ is a basis for the eigenspace for each k,
+then the total collection of basis vectors is a basis for $\mathbb{R}^{n}$}
+\noindent \textbf{Theorem 5.8 "Diagonal Matrix Representation}: Suppose $A=PDP^{-1}$,
+D is diagonal P is invertible. If B is the basis for $\mathbb{R}^{n}$ formed from the
+columns of P, called $\{\textbf{b}_{1},\textbf{b}_{2},\ldots,\textbf{b}_{n}\}$ are 
+eigenvectors of A. D is the B-matrix for the transformation A $\to$ A\textbf{x}
+\end{itemize}
+\end{subsection}
+\begin{subsection}*{Topics}
+\begin{itemize}
+\item{Difference Equations}
+\item{Diagonalization}
+\item{Basis Coordinates For Abstract Linear Transformation}
+
+\end{itemize}
+\end{subsection}
+\begin{subsection}{Difference Equations}
+A recursive relation of the form $\textbf{x}_{k+1}=A\textbf{x}_{k}$ for some matrix
+A and $\textbf{x}_{1},\textbf{x}_{2},\textbf{x}_{3}$.\\
+Assume we start with initial condition $\textbf{x}_{1}=A\textbf{x}_{0},~\textbf{x}_{2}
+A\textbf{x}_{1}=AA\textbf{x}_{0},~ \textbf{x}_{k}=A\textbf{x}_{k-1}=
+A^{k}\textbf{x}_{0}$
+\end{subsection}
+\begin{subsection}{Diagonalization}
+\begin{equation} \label{Diagonal Exponents}
+D^{k}=\begin{bmatrix} a_{11}^{k} &0 &0 \\0& a_{22}^{k} & 0\\ 0& 0& a_{33}^{k} 
+\end{bmatrix} \to A=P*D*P^{-1} \mbox{ (Similarity)}
+\end{equation}
+\textbf{Diagonalizable Definition}:A square matrix A is said to be diagonalizable if
+A is similar to a diagonal matrix. AKA $A=PDP^{-1}$ for some invertible P and some 
+diagonal D.\\
+\begin{equation}
+P=[\textbf{v}_{1}, \textbf{v}_{2}, \textbf{v}_{n}] \to A\textbf{v}_{i}=\lambda_{i}
+\textbf{v}_{i} \to D= \begin{bmatrix} x_1 & \ldots & \ldots\\ \ldots & x_2 & \ldots
+\\ \ldots & \ldots &x_3\end{bmatrix} 
+\end{equation}
+\textbf{Finding $A=PDP^{-1}$:}
+\begin{enumerate}
+\item{Find the eigenvalues}
+\item{Find n linearly independent eigenvectors of A}
+\item{Construct P from the vectors in step 2}
+\item{Construct D from the eigenvalues corresponding to P's columns}
+\item{Invert P, run the function $A=PDP^{-1}$}
+\item{If this was done correctly, AP=PD}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Basis Coordinates for Abstract Linear Transformation}
+We can use basis coordinates to relate abstract transformations to matrix 
+multiplication on vectors in real spaces.\\
+V is an n-dimensional vector space and W is an m-dimensional vector space. 
+\begin{itemize}
+\item{B is a basis for V, the B-coordinate vector $x\in V \to[x]_{b}\in 
+\mathbb{R}^{n}$}
+\item{C is a basis for W, the C-coordinate vector $u\in w \to[u]_{C}\in 
+\mathbb{R}^{m}$}
+\item{$\{\textbf{b}_{1},\dots,\textbf{b}_{n}\}$ is the basis B for V}
+\item{if $\textbf{x}=r_1\textbf{b}_{1}+\dots+r_{n}\textbf{b}_{n}$ then 
+$[x]_{B}=\begin{bmatrix} r_1\\ r_2\\ \dots \\r_{n} \end{bmatrix} $}
+\end{itemize}
+T:V $\to$ W is a linear transformation.
+\begin{equation}
+T(\textbf{x})=T(r_1\textbf{b}_{1}+\dots+r_{n}\textbf{b}_{n})=
+T(\textbf{b}_{1})+\dots+T(\textbf{b}_{n}) \in W
+\end{equation}
+Since the C coordinate mapping from W to to $\mathbb{R}^{m}$ is linear:
+\begin{equation}
+[T(\textbf{x})]_c=[r_1T(\textbf{b}_{1})+\dots+r_{n}T(\textbf{b}_{n})]_C=
+r_1[T(\textbf{b}_{1})]_{C}+\dots+r_{n}[T(\textbf{b}_{n})]_{C} \in \mathbb{R}^{n}
+\end{equation}
+\begin{equation}
+[T(x)]_{C}=M[x]_{B} \to M=[[T(\textbf{b}_1)]_{C},\dots,[T(\textbf{b}_{n})]_{C}
+\end{equation}
+M is the matrix for T relative to the bases B and C. Thus, you can find matrix M 
+relative to B and C\\
+T: V $\to$ V LT the basis C is the same as the basis B so M is the matrix relative to
+B T[B] $\to [T(\textbf{x})]_{B}=[T]_{B}[x]_{B}[T]_{B}$
+\\
+Linear transformations $\in \mathbb{R}^{n}$: a linear transformation T represented 
+by matrix multiplication where $\textbf{x} \to A\textbf{x}$\\
+If A is diagonalizable, then there is a basis B for $\mathbb{R}^{n}$ consisting of 
+eigenvectors of A.\\
+It turns out that the B matrix for T is diagonal.
+\end{subsection}
+\end{section}
+\newpage
+\begin{section}{Inner Products and Orthogonality}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 6.1}: \textbf{u}, \textbf{v}, \textbf{w} are vectors in 
+$\mathbb{R}^{n}$, $C \in \mathbb{R}$
+\begin{enumerate}
+\item{$\textbf{u}*\textbf{v}=\textbf{v}*\textbf{u}$}
+\item{$(\textbf{u}+\textbf{v})*\textbf{w}=\textbf{u}\textbf{w}+\textbf{v}+
+	\textbf{w}$}
+\item{$(c\textbf{u})*\textbf{v}=c(\textbf{u}\textbf{v}$}
+\item{$\textbf{u}-\textbf{u} \geq \textbf{0} \and \textbf{u}*\textbf{u}=\textbf{0}
+iff \textbf{u}=\textbf{0}$}
+\end{enumerate} 
+\noindent \textbf{Theorem 6.2 - Pythagorean Theorem}: Two vectors \textbf{u} and 
+\textbf{v} are orthogonal iff 
+\begin{equation} \label{}
+	||\textbf{u} +\textbf{v}||^{2}=|\textbf{u}|^{2}+|\textbf{v}|^{2}
+\end{equation}
+\\ If \textbf{u}, \textbf{v} are not orthogonal, then $||\textbf{u} +
+\textbf{v}||^{2} \geq |\textbf{u}|^{2}+|\textbf{v}|^{2}$
+\end{subsection}
+\noindent \textbf{Theorem 6.4}: If $S=\{\textbf{u}_{1},\ldots,\textbf{u}_{p}\}$ 
+is an orthogonal set of nonzero vectors in $\mathbb{R}^{n}$, then S is linearly
+independent and is a basis for the subspace spanned by S. $\textbf{0}=
+c_1\textbf{u}_{1}+\ldots+c_{p}\textbf{u}_{p} \to \textbf{0}\cdot \textbf{u}_{1}=
+textbf{u}_{1}(c_1\textbf{u}_{1})+\ldots+textbf{u}_{1}(c_{p}\textbf{u}_{p}) \to
+c||u_1||^{2}=0$ \\
+\noindent \textbf{Theorem 6.5}: let $\{\textbf{u}_{1},\ldots,\textbf{u}_{p}\}$ be
+an orthogonal basis for a subspace W of $\mathbb{R}^{n}$. For each \textbf{y} in 
+W, the weights in the linear combination $\textbf{y}=c_1\textbf{u}_{1}+\ldots+
+c_{p}\textbf{u}_{p}$ are given by $\textbf{c}_{1}=\frac{\textbf{y}\cdot
+\textbf{u}_{1}}{\textbf{u}_{1}\cdot\textbf{u}_{1}}$
+\begin{equation}
+	[\textbf{y}]_{B}=\begin{bmatrix} \frac{\textbf{y}\cdot
+\textbf{u}_{1}}{\textbf{u}_{1}\cdot\textbf{u}_{1}} \\ \dots \\
+\frac{\textbf{y}\cdot \textbf{u}_{p}}{\textbf{u}_{p}\cdot\textbf{u}_{p}} 
+\end{bmatrix} 
+\end{equation}
+\\ \noindent \textbf{Theorem 6.8 - The Orthogonal Decomposition Theorem}:
+Let W be a subspace of $\mathbb{R}^{n}$. Then every y in $\mathbb{R}^{n}$ can be
+written uniquely in the form $\textbf{y}=\hat{y} + z$. Where $\hat{y} \in W$ and 
+$z \in W^{\perp}$, and if $\{\textbf{u}_{1},\ldots,\textbf{u}_{p}\}$ is an 
+orthogonal basis of W. 
+\begin{equation}
+\hat{y}=\frac{\textbf{y}\cdot\textbf{u}_{1}}{\textbf{u}_{1}\cdot\textbf{u}_{1}}+
+\dots +
+\frac{\textbf{y}\cdot\textbf{u}_{p}}{\textbf{u}_{p}\cdot\textbf{u}_{p}}
+\end{equation}
+\\ \noindent \textbf{Theorem 6.9 - The Best Approximation}:W is a subspace of
+$\mathbb{R}^{n}$, let \textbf{y} be any vector $\in \mathbb{R}^{n}$. $\hat{y}$ is
+the orthogonal projection of \textbf{y} into W. Then $\hat{y}$ is the closest
+point in  W to \textbf{y}. $||\textbf{y}-\hat{y}||\leq||\textbf{y}-\textbf{v}||$
+for all \textbf{v} in W distinct from $\hat{y}$
+\begin{subsection}*{Topics}
+\begin{itemize}
+\item{Inner Product}
+\end{itemize}
+\end{subsection}
+\begin{subsection}{Inner Product}
+let \textbf{u} and \textbf{v} be vectors in $\mathbb{R}^{n}$. Consider them as
+n*1 matrices. The Transpose $\textbf{u}^{t}$ is a 1*n matrix. The matrix product,
+$\textbf{u}^{t}\textbf{v}$ is a 1*1 matrix, scalar - the inner product. \\
+\begin{equation}
+\textbf{u}=\begin{bmatrix} u_1 \\ u_2 \\ \dots \\ u_{n} \end{bmatrix} 
+\textbf{v}= \begin{bmatrix} v_1 \\ v_2 \\ \dots \\ v_{n} \end{bmatrix}
+\textbf{u}^{t}*\textbf{v}=u_1v_1+u_2v_2+\dots +u_{n}v_{n}
+\end{equation}
+\\ \textbf{Definition - Length}: The length of n or m of \textbf{v} is the 
+non-negative scalar ||\textbf{v}||. ||\textbf{v}||
+$= \sqrt{\textbf{v}^{T}\textbf{v}}$
+\\ \textbf{Definition - Unit Vector}: A vector whose length is 1 is called a unit 
+vector ||\textbf{u}||=1. $\textbf{u}=\frac{1}{||\textbf{v}||}\textbf{v}$ is the
+normalized vector. \\
+\textbf{Definition - Distance}: For \textbf{u}, \textbf{v} $\in \mathbb{R}^{n}$,
+the distance between \textbf{u} \and \textbf{v}, written as dist(\textbf{u},
+\textbf{v}) is the length of \textbf{u}-\textbf{v}.
+\begin{equation}
+	\mbox{dist}(\textbf{u},\textbf{v}) = ||\textbf{u}-\textbf{v}||
+\end{equation} \\
+\textbf{Definition - Orthogonal}: \textbf{u},\textbf{v} $\in \mathbb{R}^{n}$ are
+orthogonal (to each other) if $\textbf{u}\cdot \textbf{v} = \textbf{0}$.
+\\ \textbf{Definition - Orthogonal set:} A set of vectors $\{ \textbf{u}_{1},\dots
+, \textbf{u}_{n}\} \in \mathbb{R}^{n}$ is an orthogonal set if each pair of 
+distinct vectors from the set is orthogonal. $\textbf{u}_{i}\cdot\textbf{u}_{j}=
+\textbf{0}$ \\
+Subspace W is also a subspace W $\in \mathbb{R}^{n}$ if a vector z is orthogonal
+to every vector in W, Z is orthogonal to W. The set of all vectors Z orthogonal to
+W is the orthogonal complement of W, denoted $W^{\perp}$ \\
+\textbf{Definition - Orthogonal Basis}: An orthogonal basis for a subspace W of
+$\mathbb{R}^{n}$ is a basis for W that is also an orthogonal set. 
+\\ An given vector \textbf{u} has a vector y-hat within its span
+and a vector \textbf{z}, orthogonal to it. From this,
+\begin{equation} 
+\textbf{y}=\hat{y}+\textbf{z} \to 
+\hat{y}=\alpha\textbf{u} \to
+0=z\cdot \textbf{u}=(y-\alpha\textbf{u})\cdot\textbf{u} \to \alpha=\frac
+{\textbf{y}\cdot\textbf{u}}{\textbf{u}\cdot\textbf{u}} \to \hat{y}=\frac
+{\textbf{y}\cdot\textbf{u}}{\textbf{u}\cdot\textbf{u}}=\mbox{proj}_{u}\textbf{y}
+\end{equation}
+\\ This is called an orthogonal decomposition.
+\end{subsection}
+\end{section}
+\newpage
+\begin{section}{Gram-Schmidt Process and Least Squares}
+\begin{subsection}*{Theorems}
+\textbf{Theorem 6.11 - Gram-Schmidt Process}: Given a basis $\{\textbf{x}_{1}
+,\textbf{x}_{2},\dots,\textbf{x}_{3}\}$for a nonzero subspace W of $\mathbb{R}^{n}$ \\
+\begin{equation}
+v_1=x_1 \to 
+v_2=x_2-\frac{x_2\cdot v_1}{v_1\cdot v_1}*v_1
+\end{equation}
+\begin{equation}
+v_{p}=x_{p}-\frac{x_{p}\cdot v_1}{v_1\cdot v_1}*v_1 - 
+\frac{x_{p} \cdot v_2}{v_2 \cdot v_2}*v_2
+-\frac{x_{p} \cdot v_{p-1}}{v_{p-1}\cdot v_{p-1}*v_{p-1}}*v_{p-1}
+\end{equation}
+
+Then $\{\textbf{v}_{1},\dots,\textbf{v}_{P}\}$ is an orthogonal basis for W and 
+\noindent \textbf{Theorem 6.13}: The set of least-squares solutions of $A\textbf{x}
+=\textbf{b}$ coincides with the non-empty set of solution to the normal equations
+\begin{equation} \label{Least Square}
+A^{T}A\textbf{x}=A^{T}\textbf{b}
+\end{equation}
+\\ \noindent \textbf{Theorem 6.14}: Let A be an m*n matrix. The following
+statements are logically equivalent:
+\begin{itemize}
+\item{The equation $A\textbf{x}=\textbf{b}$ has a unique least squares solution
+for each $\textbf{b}\in\mathbb{R}^{m}$}
+\item{The columns of A are linearly independent}
+\item{The matrix $A^{T}A$ is invertible}
+\end{itemize}
+When these statements are true, the least squares solution $\hat{x}$ is given by
+\begin{equation}
+	\hat{x}=(A^{T}A)^{-1}A^{T}\textbf{b}
+\end{equation}
+\end{subsection}
+\begin{subsection}*{Topics}
+
+\end{subsection}
+\begin{subsection}{Gram-Schmidt}
+With any $\{\textbf{v}_{1},\dots,\textbf{v}_{n}\}$ that is an LI basis for 
+Vector Space W, you can make $\{\textbf{u}_{1},\dots,\textbf{e}_{n}\}$ \\
+\textbf{Gram-Schmidt Process}
+\begin{enumerate}
+\item{Let W=Span$\{\textbf{x}_{1}, \textbf{x}_{2}, \textbf{x}_{3}\}$}
+\item{$\textbf{v}_{1}=\textbf{x}_{1},~W_1=Span\{\textbf{v}_{1}
+	,\textbf{v}_{2},\textbf{v}_{3}\}$}
+\item{$\textbf{v}_{2}=\textbf{x}_{2}-proj_{w1}\textbf{x}_{2}=\textbf{x
+}_{2}-\frac{\textbf{x}_{2}\cdot\textbf{v}_{1}}{\textbf{v}_{1}\cdot
+\textbf{v}_{1}}*\textbf{v}_{1}$}
+\item{$\textbf{v}_{3}=\textbf{x}_{3}-proj_{w2}\textbf{x}_{3}=\textbf{x
+}_{3}-\frac{\textbf{x}_{3}\cdot\textbf{v}_{1}}{\textbf{v}_{1}\cdot
+\textbf{v}_{1}}*\textbf{v}_{1}+\frac{\textbf{x}_{3}\cdot\textbf{v}_{2}}
+{\textbf{v}_{2}\cdot\textbf{v}_{2}}*\textbf{v}_{2}$}
+\end{enumerate}
+\end{subsection}
+\begin{subsection}{Least Squares}
+In applications, A\textbf{x}=\textbf{b} will most often be inconsistent (Sad). \\
+\textbf{Definition - Least Squares}: If A is an m*n matrix and \textbf{b}
+$\mathbb{R}^{n}$, a least squares solution of A\textbf{x}=\textbf{b}, is an 
+$\hat{x} \in \mathbb{R}^{n}$ such that \\
+$||\textbf{b}-A\hat{x}|| \leq ||b-A\textbf{x}||$ for all x in $\mathbb{R}^{n}$ \\
+No matter what \textbf{x} we pick, A\textbf{x} will be in the column space of A.
+Find the \textbf{x} that makes A\textbf{x} the Closest space in ColA to \textbf{b}
+\\ Apply the best approximation theorem:\\
+$\hat{b}=proj_{colA}\textbf{b}$ - Because $\hat{b}$ is in the column space of A,
+$A\textbf{x}=\hat{b}$ is consistent. Thus, there exists an $\hat{x}$ such that 
+$A\hat{x}=\hat{b}$ From this, $\hat{x}$ is a list of weights that builds $\hat{b}$
+out of the columns of A. \\
+Suppose $\hat{x}$ satisfies $A\textbf{x}=\hat{b}$. By the orthogonal decomposition
+theorem: $\textbf{b}-\hat{b}$ is orthogonal to ColA, meaning $\textbf{b}-\hat{b}$ 
+is orthogonal to column of A. \\
+$a_{j}*(\textbf{b}-\hat{b})=0 \to a_{j}^{T}(\textbf{b}-\hat{b}) \to A^{T}
+(\textbf{b}-\hat{b}) = A^{T}(\textbf{b}-A\hat{x}=0$\\
+$A^{T}A\hat{x}=A^{T}\textbf{b}$
 \end{subsection}
 \end{section}
 \end{document}
